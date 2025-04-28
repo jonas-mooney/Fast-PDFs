@@ -7,6 +7,15 @@ using Document = QuestPDF.Fluent.Document;
 
 QuestPDF.Settings.License = LicenseType.Community;
 
+
+Console.WriteLine("Welcome to Fast PDF! \n Please enter the name of your file:");
+string chosenFileName = Console.ReadLine();
+Console.WriteLine("Please enter the header text for your poster:");
+string headerText = Console.ReadLine();
+Console.WriteLine("Please enter the text content for your main information:");
+string contentText = Console.ReadLine();
+
+
 var fileName = "hello.pdf";
 
 Document.Create(container =>
@@ -19,7 +28,7 @@ Document.Create(container =>
         page.DefaultTextStyle(x => x.FontSize(20));
 
         page.Header()
-            .Text("Hello PDF!")
+            .Text(headerText)
             .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
 
         page.Content()
@@ -28,7 +37,7 @@ Document.Create(container =>
             {
                 x.Spacing(20);
 
-                x.Item().Text(Placeholders.LoremIpsum());
+                x.Item().Text(contentText);
                 x.Item().Image(Placeholders.Image(200, 100));
             });
 
@@ -41,10 +50,13 @@ Document.Create(container =>
             });
     });
 })
-.GeneratePdf(fileName);
+.GeneratePdf($"{chosenFileName}.pdf");
+
+//.GeneratePdf($"Users/jonas_gcsfmp0/Downloads/{chosenFileName}.pdf");
+// https://github.com/QuestPDF/QuestPDF/discussions/1004
 
 var p = new Process();
-p.StartInfo = new ProcessStartInfo(Path.Combine(Directory.GetCurrentDirectory(), fileName))
+p.StartInfo = new ProcessStartInfo(Path.Combine(Directory.GetCurrentDirectory(), $"{chosenFileName}.pdf"))
 {
     UseShellExecute = true
 };
