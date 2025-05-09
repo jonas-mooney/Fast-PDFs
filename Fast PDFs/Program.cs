@@ -50,14 +50,6 @@ Document.Create(container =>
                 //x.Item().Image(Placeholders.Image(200, 100));
                 x.Item().Image(imageFilePath);
             });
-
-        page.Footer()
-            .AlignCenter()
-            .Text(x =>
-            {
-                x.Span("Page ");
-                x.CurrentPageNumber();
-            });
     });
 })
 .GeneratePdf(filePath);
