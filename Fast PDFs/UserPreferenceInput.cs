@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Spectre.Console;
 public class UserPreferenceInput
 {
 	public static UserPreference GetUserPreferenceFromConsole()

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Reflection.Metadata;
+﻿using Fast_PDFs;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -7,9 +6,13 @@ using Document = QuestPDF.Fluent.Document;
 
 QuestPDF.Settings.License = LicenseType.Community;
 
+string posterSelect = PosterSelect.UserPosterSelection();
+
+
+
 UserPreference preference = UserPreferenceInput.GetUserPreferenceFromConsole();
 
-Console.WriteLine(preference.ChosenFileName);
+
 
 
 string downloadsPath = Path.Combine(
@@ -40,9 +43,19 @@ Document.Create(container =>
                 x.Spacing(20);
 
                 x.Item().Text(preference.ContentText);
-                //x.Item().Image(Placeholders.Image(200, 100));
                 x.Item().Image(preference.ImageFilePath);
             });
     });
 })
 .GeneratePdf(filePath);
+
+
+
+/*
+
+Class for poster type select
+Classes for each type of poster
+
+
+
+ */
