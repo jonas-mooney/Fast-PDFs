@@ -6,7 +6,7 @@
         {
             if (posterSelect == "Event")
             {
-                EventPosterInput.GetEventDetails();
+                EventPoster poster = EventPosterInput.GetEventDetails();
             }
         }
     }
