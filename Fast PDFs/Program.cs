@@ -7,16 +7,9 @@ using Document = QuestPDF.Fluent.Document;
 
 QuestPDF.Settings.License = LicenseType.Community;
 
+UserPreference preference = UserPreferenceInput.GetUserPreferenceFromConsole();
 
-Console.WriteLine("Welcome to Fast PDF! \n Please enter the name of your file (including a trailing .pdf):");
-string chosenFileName = Console.ReadLine();
-Console.WriteLine("Please enter the header text for your poster:");
-string headerText = Console.ReadLine();
-Console.WriteLine("Please enter the text content for your main information:");
-string contentText = Console.ReadLine();
-Console.WriteLine("Please drag and drop an image file for your poster:");
-string imageFilePath = Console.ReadLine();
-Console.WriteLine("Your pdf has been saved to the Downloads folder!");
+Console.WriteLine(preference.ChosenFileName);
 
 
 string downloadsPath = Path.Combine(
@@ -24,7 +17,7 @@ string downloadsPath = Path.Combine(
     "Downloads"
 );
 
-string filePath = Path.Combine(downloadsPath, chosenFileName);
+string filePath = Path.Combine(downloadsPath, preference.ChosenFileName);
 
 
 Document.Create(container =>
@@ -37,7 +30,7 @@ Document.Create(container =>
         page.DefaultTextStyle(x => x.FontSize(20));
 
         page.Header()
-            .Text(headerText)
+            .Text(preference.HeaderText)
             .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
 
         page.Content()
@@ -46,9 +39,9 @@ Document.Create(container =>
             {
                 x.Spacing(20);
 
-                x.Item().Text(contentText);
+                x.Item().Text(preference.ContentText);
                 //x.Item().Image(Placeholders.Image(200, 100));
-                x.Item().Image(imageFilePath);
+                x.Item().Image(preference.ImageFilePath);
             });
     });
 })
