@@ -12,7 +12,7 @@ namespace Fast_PDFs
                 .PageSize(10)
                 .MoreChoicesText("[grey](Move up and down to reveal more fruits)[/]")
                 .AddChoices(new[] {
-                    "Event", "Missing Pet", "Job Post,"
+                    "Event", "Missing Pet", "Job Post",
                 }));
 
             return posterSelection;

@@ -8,7 +8,7 @@ namespace Fast_PDFs
     public class BuildEventPoster
     {
 
-        public void Build(EventPoster eventDetails)
+        public static void Build(EventPoster eventDetails)
         {
             Document.Create(container =>
             {
