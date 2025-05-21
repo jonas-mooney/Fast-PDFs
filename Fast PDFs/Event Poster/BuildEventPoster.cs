@@ -1,4 +1,5 @@
-﻿using QuestPDF.Fluent;
+﻿using QuestPDF.Companion;
+using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using Document = QuestPDF.Fluent.Document;
@@ -34,7 +35,8 @@ namespace Fast_PDFs
                         });
                 });
             })
-.GeneratePdf(eventDetails.FileName);
+//.GeneratePdf(eventDetails.FileName);
+.ShowInCompanion();
         }
 
     }
