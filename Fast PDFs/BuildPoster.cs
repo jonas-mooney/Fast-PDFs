@@ -1,4 +1,6 @@
-﻿namespace Fast_PDFs
+﻿using Fast_PDFs.Missing_Pet_Poster;
+
+namespace Fast_PDFs
 {
     public class BuildPoster
     {
@@ -8,6 +10,11 @@
             {
                 EventPoster poster = EventPosterInput.GetEventDetails();
                 BuildEventPoster.Build(poster);
+            }
+            else if (posterSelect == "Missing Pet")
+            {
+                MissingPetPoster poster = MissingPetPosterInput.GetMissingPetDetails();
+                BuildMissingPetPoster.Build(poster);
             }
         }
     }
