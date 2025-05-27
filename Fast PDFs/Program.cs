@@ -11,19 +11,29 @@ string downloadsPath = Path.Combine(
     "Downloads"
 );
 
-string posterSelect = PosterSelect.UserPosterSelection();
+MissingPetPoster testPoster = new MissingPetPoster("Dog", "Roofus", "C:\\Users\\jonas\\Downloads\\pexels-katlovessteve-551628.jpg", "Brown, fluffy dog. Roofus has been lost for 2 weeks. He has a small black collar with a bell. He loves bacon and is probably very thirsty. Please call us at 555-1234", "Yes", "$800");
+BuildMissingPetPoster.Build(testPoster);
 
-BuildPoster.BuildPosterByType(posterSelect);
+//string posterSelect = PosterSelect.UserPosterSelection();
+
+//BuildPoster.BuildPosterByType(posterSelect);
+
+
+
+
+
+
+
+// The above is valid
+///////////////////////////////////////
+
+
+
 
 
 //UserPreference preference = UserPreferenceInput.GetUserPreferenceFromConsole();
 
-
-
-
-
 //string filePath = Path.Combine(downloadsPath, preference.ChosenFileName);
-
 
 //Document.Create(container =>
 //{

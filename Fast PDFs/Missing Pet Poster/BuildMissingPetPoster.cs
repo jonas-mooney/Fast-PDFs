@@ -20,8 +20,9 @@ namespace Fast_PDFs
                     page.DefaultTextStyle(x => x.FontSize(20));
 
                     page.Header()
-                        .Text(missingPetDetails.TypeOfPet)
-                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+                        .Text(("LOST " + missingPetDetails.TypeOfPet).ToUpper())
+                        .SemiBold().FontSize(50).FontColor(Colors.Red.Medium)
+                        .AlignCenter();
 
                     page.Content()
                         .PaddingVertical(1, Unit.Centimetre)
@@ -29,14 +30,31 @@ namespace Fast_PDFs
                         {
                             x.Spacing(20);
 
-                            x.Item().Text(missingPetDetails.Description);
-                            x.Item().Text(missingPetDetails.PetName);                            x.Item().Text(missingPetDetails.RewardIfFound);
-                            if (missingPetDetails.RewardAmount != "")
-                            {
-                                x.Item().Text(missingPetDetails.RewardAmount);
-                            }
                             x.Item().Image(missingPetDetails.ImageFilePath);
+
+                            x.Item().Text((missingPetDetails.PetName).ToUpper())
+                            .SemiBold().FontSize(30).FontColor(Colors.Red.Medium)
+
+                            .FontSize(30)
+                            .AlignCenter();
+
+                            x.Item().Text(missingPetDetails.Description)
+                            .FontSize(18);
+
+
                         });
+
+                    if (missingPetDetails.RewardAmount != "")
+                    {
+                        //x.Item().Text("Reward if found: " + missingPetDetails.RewardAmount);
+
+                        page.Footer()
+                            .Text($"{missingPetDetails.RewardAmount} REWARD | 555-1234")
+                            .AlignCenter()
+                            .FontSize(20);
+                    }
+
+
                 });
             })
 //.GeneratePdf(eventDetails.FileName);
