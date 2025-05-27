@@ -4,7 +4,7 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using Document = QuestPDF.Fluent.Document;
 
-namespace Fast_PDFs.Missing_Pet_Poster
+namespace Fast_PDFs
 {
     public class BuildMissingPetPoster
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fast_PDFs.Missing_Pet_Poster
+namespace Fast_PDFs
 {
     public class MissingPetPoster
     {

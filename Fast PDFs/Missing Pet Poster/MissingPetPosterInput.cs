@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Spectre.Console;
 
-namespace Fast_PDFs.Missing_Pet_Poster
+namespace Fast_PDFs
 {
     public class MissingPetPosterInput
     {
