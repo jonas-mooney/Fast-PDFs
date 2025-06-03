@@ -14,6 +14,10 @@
                 MissingPetPoster poster = MissingPetPosterInput.GetMissingPetDetails();
                 BuildMissingPetPoster.Build(poster);
             }
+            else if (posterSelect == "Job Post")
+            {
+
+            }
         }
     }
 }
