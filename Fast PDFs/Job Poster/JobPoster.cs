@@ -31,12 +31,14 @@
     public class Compensation
     {
         public string Type { get; set; }
-        public decimal Amount { get; set; }
+        public string Amount { get; set; }
 
-        public Compensation(string type, decimal amount)
+        public Compensation(string type, string amount)
         {
             Type = type;
             Amount = amount;
         }
     }
 }
+
+// Change amount to decimal in input file
