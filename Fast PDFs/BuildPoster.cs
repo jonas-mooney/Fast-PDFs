@@ -16,7 +16,8 @@
             }
             else if (posterSelect == "Job Post")
             {
-
+                JobPoster poster = JobPosterInput.GetJobPosterInput();
+                BuildJobPoster.Build(poster);
             }
         }
     }

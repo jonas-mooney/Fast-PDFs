@@ -4,7 +4,7 @@ namespace Fast_PDFs
 {
     public class JobPosterInput
     {
-        public JobPoster GetJobPosterInput()
+        public static JobPoster GetJobPosterInput()
         {
             Console.WriteLine("Name of company:\n");
             string companyName = Console.ReadLine();
