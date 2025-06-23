@@ -9,11 +9,17 @@ string downloadsPath = Path.Combine(
 );
 
 //MissingPetPoster testPoster = new MissingPetPoster("Dog", "Roofus", "C:\\Users\\jonas_gcsfmp0\\Downloads\\pexels-katlovessteve-551628.jpg", "Brown, fluffy dog. Roofus has been lost for 2 weeks. He has a small black collar with a bell. He loves bacon and is probably very thirsty. Please call us at 555-1234", "Yes", "$800");
-//BuildMissingPetPoster.Build(testPoster);
+MissingPetPoster testPetPoster = new MissingPetPoster("Dog", "Roofus", "C:\\Users\\jonas\\Downloads\\pexels-katlovessteve-551628.jpg", "Brown, fluffy dog. Roofus has been lost for 2 weeks. He has a small black collar with a bell. He loves bacon and is probably very thirsty. Please call us at 555-1234", "Yes", "$800");
+BuildMissingPetPoster.Build(testPetPoster);
 
-string posterSelect = PosterSelect.UserPosterSelection();
+EventPoster testEventPoster = new EventPoster("Party at Jake's", "It's gonna be fun. Chips and dip provided.", "C:\\Users\\jonas\\Downloads\\pexels-katlovessteve-551628.jpg", "party.pdf");
+BuildEventPoster.Build(testEventPoster);
 
-BuildPoster.BuildPosterByType(posterSelect);
+JobPoster testJobPoster = new JobPoster("The Company, LLC", "Software Engineer", "")
+
+//string posterSelect = PosterSelect.UserPosterSelection();
+
+//BuildPoster.BuildPosterByType(posterSelect);
 
 
 
