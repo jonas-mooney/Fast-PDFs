@@ -10,12 +10,14 @@ string downloadsPath = Path.Combine(
 
 //MissingPetPoster testPoster = new MissingPetPoster("Dog", "Roofus", "C:\\Users\\jonas_gcsfmp0\\Downloads\\pexels-katlovessteve-551628.jpg", "Brown, fluffy dog. Roofus has been lost for 2 weeks. He has a small black collar with a bell. He loves bacon and is probably very thirsty. Please call us at 555-1234", "Yes", "$800");
 MissingPetPoster testPetPoster = new MissingPetPoster("Dog", "Roofus", "C:\\Users\\jonas\\Downloads\\pexels-katlovessteve-551628.jpg", "Brown, fluffy dog. Roofus has been lost for 2 weeks. He has a small black collar with a bell. He loves bacon and is probably very thirsty. Please call us at 555-1234", "Yes", "$800");
-BuildMissingPetPoster.Build(testPetPoster);
+//BuildMissingPetPoster.Build(testPetPoster);
 
 EventPoster testEventPoster = new EventPoster("Party at Jake's", "It's gonna be fun. Chips and dip provided.", "C:\\Users\\jonas\\Downloads\\pexels-katlovessteve-551628.jpg", "party.pdf");
-BuildEventPoster.Build(testEventPoster);
+//BuildEventPoster.Build(testEventPoster);
 
-JobPoster testJobPoster = new JobPoster("The Company, LLC", "Software Engineer", "")
+Compensation testCompensation = new Compensation("Salary", "90,000");
+JobPoster testJobPoster = new JobPoster("The Company, LLC", "Software Engineer", "Take the lead of projects to improve and optimize The Company's APIs", testCompensation, "Full time", ["Self starter", "5 years experience in Java and C#"], ["Remote position, 9-5", "Daily team standups"], "801-555-5555", "teamlead@thecompanyllc.com", "thecompany.com");
+//BuildJobPoster.Build(testJobPoster);
 
 //string posterSelect = PosterSelect.UserPosterSelection();
 
@@ -23,54 +25,8 @@ JobPoster testJobPoster = new JobPoster("The Company, LLC", "Software Engineer",
 
 
 
-
-
-
-
-// The above is valid
-///////////////////////////////////////
-
-
-
-
-
-//UserPreference preference = UserPreferenceInput.GetUserPreferenceFromConsole();
-
-//string filePath = Path.Combine(downloadsPath, preference.ChosenFileName);
-
-//Document.Create(container =>
-//{
-//    container.Page(page =>
-//    {
-//        page.Size(PageSizes.A4);
-//        page.Margin(2, Unit.Centimetre);
-//        page.PageColor(Colors.White);
-//        page.DefaultTextStyle(x => x.FontSize(20));
-
-//        page.Header()
-//            .Text(preference.HeaderText)
-//            .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
-
-//        page.Content()
-//            .PaddingVertical(1, Unit.Centimetre)
-//            .Column(x =>
-//            {
-//                x.Spacing(20);
-
-//                x.Item().Text(preference.ContentText);
-//                x.Item().Image(preference.ImageFilePath);
-//            });
-//    });
-//})
-//.GeneratePdf(filePath);
-
-
-
-/*
-
-Class for poster type select
-Classes for each type of poster
-
-
-
- */
+// UP NEXT
+// 1) Data sanitization and null checks in input classes.
+// 2) Create checks to ensure something was entered in each required field.
+// 3) Finalize pdf designs of each.
+// 4) Build binaries and post on website / github with README!
