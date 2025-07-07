@@ -18,6 +18,7 @@ namespace PosterTests
             string actualTitle = "Party at Jake's";
 
             Assert.AreEqual(actualTitle, eventPoster.Title, false, "The actualTitle strings did not match");
+            //BuildEventPoster.Build(eventPoster);
         }
     }
 }
