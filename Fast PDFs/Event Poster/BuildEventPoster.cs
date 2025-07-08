@@ -35,8 +35,8 @@ namespace Fast_PDFs
                         });
                 });
             })
-//.GeneratePdf(eventDetails.FileName);
-.ShowInCompanion();
+            //.GeneratePdf(eventDetails.FileName);
+            .ShowInCompanion();
         }
 
     }
