@@ -25,3 +25,8 @@ namespace Fast_PDFs
         }
     }
 }
+
+
+// Loop until valid
+// Helper method
+// Optional parameters
