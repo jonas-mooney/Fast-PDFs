@@ -6,8 +6,8 @@ namespace Fast_PDFs
     {
         public static EventPoster GetEventDetails()
         {
-            Console.WriteLine("Please enter the event title:");
-            string title = Console.ReadLine();
+            string title = CheckValidInput.Checkinput("Please enter the event title:");
+            
             string invalidChars = new string(Path.GetInvalidFileNameChars());
             string pattern = $"[{Regex.Escape(invalidChars)}]";
             string titleSanitizedFileName = Regex.Replace(title, pattern, "");
