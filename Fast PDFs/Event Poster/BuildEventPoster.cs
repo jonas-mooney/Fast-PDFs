@@ -22,7 +22,8 @@ namespace Fast_PDFs
 
                     page.Header()
                         .Text(eventDetails.Title)
-                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+                        .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium)
+                        .AlignCenter();
 
                     page.Content()
                         .PaddingVertical(1, Unit.Centimetre)
@@ -30,8 +31,9 @@ namespace Fast_PDFs
                         {
                             x.Spacing(20);
 
-                            x.Item().Text(eventDetails.Description);
                             x.Item().Image(eventDetails.ImageFile);
+                            x.Item().Text("Address: " + eventDetails.Address);
+                            x.Item().Text(eventDetails.Description);
                         });
                 });
             })

@@ -7,26 +7,18 @@ namespace Fast_PDFs
         public static EventPoster GetEventDetails()
         {
             string title = CheckValidInput.Checkinput("Please enter the event title:");
-            
+
             string invalidChars = new string(Path.GetInvalidFileNameChars());
             string pattern = $"[{Regex.Escape(invalidChars)}]";
             string titleSanitizedFileName = Regex.Replace(title, pattern, "");
 
-            Console.WriteLine("Please enter the event description:");
-            string description = Console.ReadLine();
+            string description = CheckValidInput.Checkinput("Please enter the event description:");
 
-            Console.WriteLine("Please drag and drop an image file for your poster:");
-            string imageFilePath = Console.ReadLine();
+            string address = CheckValidInput.Checkinput("Please enter the address of the event:");
 
-            //Console.WriteLine("Please enter the name for your pdf to be saved as (including a trailing .pdf):");
-            //string chosenFileName = Console.ReadLine();
+            string imageFilePath = CheckValidInput.Checkinput("Please drag and drop an image file for your poster:");
 
-            return new EventPoster(title, description, imageFilePath, titleSanitizedFileName);
+            return new EventPoster(title, description, address, imageFilePath, titleSanitizedFileName);
         }
     }
 }
-
-
-// Loop until valid
-// Helper method
-// Optional parameters
