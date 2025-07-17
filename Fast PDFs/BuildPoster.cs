@@ -2,12 +2,12 @@
 {
     public class BuildPoster
     {
-        public static void BuildPosterByType(string posterSelect)
+        public static void BuildPosterByType(string posterSelect, string downloadsPath)
         {
             if (posterSelect == "Event")
             {
                 EventPoster poster = EventPosterInput.GetEventDetails();
-                BuildEventPoster.Build(poster);
+                BuildEventPoster.Build(poster, downloadsPath);
             }
             else if (posterSelect == "Missing Pet")
             {

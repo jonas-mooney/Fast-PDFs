@@ -30,14 +30,38 @@ namespace Fast_PDFs
                         {
                             x.Spacing(20);
 
-                            x.Item().Text(jobDetails.JobDescription);
-                            x.Item().Text(jobDetails.Compensation.Type);
-                            //x.Item().Image(jobDetails.Compensation);
+                            x.Item().Text(jobDetails.JobTitle + " | " + jobDetails.FullOrPartTime);
+                            x.Item().Text(jobDetails.Compensation.Type + ": " + jobDetails.Compensation.Amount);
+                            x.Item().Text(jobDetails.JobDescription).FontSize(16);
+                            x.Item().Text("Qualifications:");
+                            foreach (var i in jobDetails.Qualifications)
+                            {
+                                x.Item().Row(row =>
+                                {
+                                    //row.ConstantItem(26).Image("Resources/bulletpoint.png");
+                                    row.ConstantItem(20);
+                                    row.RelativeItem().Text(i).FontSize(16).LineHeight(.50f);
+                                });
+                            }
+                            x.Item().Text("Job Requirements:");
+                            foreach (var i in jobDetails.JobRequirements)
+                            {
+                                x.Item().Row(row =>
+                                {
+                                    //row.ConstantItem(26).Image("Resources/bulletpoint.png");
+                                    row.ConstantItem(20);
+                                    row.RelativeItem().Text(i).FontSize(16).LineHeight(.50f);
+                                });
+                            }
+                            x.Item().Text("Contact us").Underline();
+                            x.Item().Text(jobDetails.ContactPhone).FontSize(16).LineHeight(.50f);
+                            x.Item().Text(jobDetails.ContactEmail).FontSize(16).LineHeight(.50f);
+                            x.Item().Text(jobDetails.ContactEmail).FontSize(16).LineHeight(.50f);
                         });
                 });
             })
-//.GeneratePdf(eventDetails.FileName);
-.ShowInCompanion();
+            //.GeneratePdf(jobDetails.san);
+            .ShowInCompanion();
         }
 
     }

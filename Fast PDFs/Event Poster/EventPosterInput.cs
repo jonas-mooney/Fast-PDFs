@@ -16,9 +16,11 @@ namespace Fast_PDFs
 
             string address = CheckValidInput.Checkinput("Please enter the address of the event:");
 
+            string time = CheckValidInput.Checkinput("Please enter the time of the event:");
+
             string imageFilePath = CheckValidInput.Checkinput("Please drag and drop an image file for your poster:");
 
-            return new EventPoster(title, description, address, imageFilePath, titleSanitizedFileName);
+            return new EventPoster(title, description, address, time, imageFilePath, titleSanitizedFileName);
         }
     }
 }

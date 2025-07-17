@@ -1,5 +1,4 @@
-﻿using QuestPDF.Companion;
-using QuestPDF.Fluent;
+﻿using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using Document = QuestPDF.Fluent.Document;
@@ -9,8 +8,11 @@ namespace Fast_PDFs
     public class BuildEventPoster
     {
 
-        public static void Build(EventPoster eventDetails)
+        public static void Build(EventPoster eventDetails, string downloadsPath)
         {
+            string fileNameForDownload = eventDetails.FileName + ".pdf";
+            string fullPath = Path.Combine(downloadsPath, fileNameForDownload);
+
             Document.Create(container =>
             {
                 container.Page(page =>
@@ -32,13 +34,15 @@ namespace Fast_PDFs
                             x.Spacing(20);
 
                             x.Item().Image(eventDetails.ImageFile);
-                            x.Item().Text("Address: " + eventDetails.Address);
+                            x.Item().Text("When: " + eventDetails.Time);
+                            x.Item().Text("Where: " + eventDetails.Address);
                             x.Item().Text(eventDetails.Description);
                         });
                 });
             })
             //.GeneratePdf(eventDetails.FileName);
-            .ShowInCompanion();
+            .GeneratePdf(fullPath);
+            //.ShowInCompanion();
         }
 
     }
